@@ -1,0 +1,131 @@
+.authPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fbff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 30px 80px rgba(79, 92, 255, 0.18);
+}
+
+.authLeft {
+  background: linear-gradient(135deg, #4f5cff, #7b61ff);
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.authBadge {
+  display: inline-block;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.16);
+  border-radius: 999px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.authLeft h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.authLeft h1 span {
+  display: block;
+  color: #dfe3ff;
+}
+
+.authDescription {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 500px;
+  opacity: 0.95;
+}
+
+.authFeatures {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.authFeatures span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  font-weight: 600;
+}
+
+.authRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.authFormBox {
+  width: 100%;
+  max-width: 420px;
+}
+
+.authAvatar {
+  width: 65px !important;
+  height: 65px !important;
+  margin: auto !important;
+  margin-bottom: 24px !important;
+  background: #9333ea !important;
+}
+
+.authTabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.activeBtn {
+  background: #4f5cff !important;
+}
+
+.authForm {
+  width: 100%;
+}
+
+.loginBtn {
+  margin-top: 24px !important;
+  height: 54px !important;
+  background: #4f5cff !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 900px) {
+  .authCard {
+    grid-template-columns: 1fr;
+  }
+
+  .authLeft {
+    padding: 45px;
+  }
+
+  .authLeft h1 {
+    font-size: 42px;
+  }
+
+  .authRight {
+    padding: 35px 24px;
+  }
+}

@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* Home.jsx */
+.meetContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fbff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 6%;
+}
+
+.meetCard {
+  width: 100%;
+  max-width: 1250px;
+  background: white;
+  border-radius: 30px;
+  padding: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  box-shadow: 0 30px 80px rgba(79, 92, 255, 0.15);
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.meetBadge {
+  padding: 10px 18px;
+  background: #eef0ff;
+  color: #4f5cff;
+  border-radius: 999px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.leftPanel h2 {
+  font-size: 52px;
+  line-height: 1.12;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.leftPanel h2 span {
+  display: block;
+  color: #4f5cff;
+}
+
+.meetText {
+  color: #6b7280;
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.joinInputBox {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.joinMeetBtn {
+  min-width: 130px !important;
+  height: 56px !important;
+  background: #4f5cff !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+
+.rightPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightPanel img {
+  width: 100%;
+  max-width: 430px;
+}
+
+@media (max-width: 900px) {
+  .meetCard {
+    grid-template-columns: 1fr;
+    padding: 35px;
+  }
+
+  .leftPanel h2 {
+    font-size: 38px;
+  }
+
+  .joinInputBox {
+    flex-direction: column;
+  }
+
+  .joinMeetBtn {
+    width: 100%;
+  }
+}
+
+/* end home.jsx */
+
+
+/* authentication.css  */
+.authPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fbff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 30px 80px rgba(79, 92, 255, 0.18);
+}
+
+.authLeft {
+  background: linear-gradient(135deg, #4f5cff, #7b61ff);
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.authBadge {
+  display: inline-block;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.16);
+  border-radius: 999px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.authLeft h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.authLeft h1 span {
+  display: block;
+  color: #dfe3ff;
+}
+
+.authDescription {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 500px;
+  opacity: 0.95;
+}
+
+.authFeatures {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.authFeatures span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  font-weight: 600;
+}
+
+.authRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.authFormBox {
+  width: 100%;
+  max-width: 420px;
+}
+
+.authAvatar {
+  width: 65px !important;
+  height: 65px !important;
+  margin: auto !important;
+  margin-bottom: 24px !important;
+  background: #9333ea !important;
+}
+
+.authTabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.activeBtn {
+  background: #4f5cff !important;
+}
+
+.authForm {
+  width: 100%;
+}
+
+.loginBtn {
+  margin-top: 24px !important;
+  height: 54px !important;
+  background: #4f5cff !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 900px) {
+  .authCard {
+    grid-template-columns: 1fr;
+  }
+
+  .authLeft {
+    padding: 45px;
+  }
+
+  .authLeft h1 {
+    font-size: 42px;
+  }
+
+  .authRight {
+    padding: 35px 24px;
+  }
+}
+
+/* end authontication.jsx */
