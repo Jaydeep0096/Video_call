@@ -17,7 +17,7 @@ app.set("port", (process.env.PORT || 8000))
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use(cors({
-  origin: "https://video-call-tau-six.vercel.app/",
+  origin: "https://video-call-tau-six.vercel.app",
   credentials: true
 }));
 
