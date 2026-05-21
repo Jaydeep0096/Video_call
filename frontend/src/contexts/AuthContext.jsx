@@ -24,17 +24,20 @@ export const AuthProvider = ({ children }) => {
 
     const handleRegister = async (name, username, password) => {
         try {
-            console.log("REGISTER URL:", client.defaults.baseURL + "/register");
+            
             let request = await client.post("/register", {
                 name: name,
                 username: username,
                 password: password
-            })
+                }, {
+                timeout: 15000
+                })
 
 
             if ( request.status === httpStatus.OK || request.status === httpStatus.CREATED){
                 return request.data.message;
             }
+            console.log("REGISTER URL:", client.defaults.baseURL + "/register");
         } catch (err) {
             console.log("STATUS:", err.response?.status);
             console.log("DATA:", err.response?.data);

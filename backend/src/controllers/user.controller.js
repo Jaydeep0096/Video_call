@@ -59,7 +59,7 @@ const register = async (req, res) => {
         await newUser.save();
         
 
-        res.status(httpStatus.CREATED).json({ message: "User Registered" })
+        return res.status(201).json({ message: "User registered successfully" });
         console.log(req.body);
         console.log("USERNAME:", username);
 
