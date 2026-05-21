@@ -23,7 +23,7 @@ const Navbar = () => {
       {/* Nav Links */}
       <div className="nav-links">
         <p
-          onClick={() => router("/aljk23")}
+          onClick={() => router("/guest")}
           className="nav-link"
         >
           Join as Guest

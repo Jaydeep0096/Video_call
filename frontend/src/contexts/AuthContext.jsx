@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
 
     const handleRegister = async (name, username, password) => {
         try {
+            console.log("REGISTER URL:", client.defaults.baseURL + "/register");
             let request = await client.post("/register", {
                 name: name,
                 username: username,
@@ -31,32 +32,55 @@ export const AuthProvider = ({ children }) => {
             })
 
 
-            if (request.status === httpStatus.CREATED) {
+            if ( request.status === httpStatus.OK || request.status === httpStatus.CREATED){
                 return request.data.message;
             }
         } catch (err) {
+            console.log("STATUS:", err.response?.status);
+            console.log("DATA:", err.response?.data);
+            console.log("HEADERS:", err.response?.headers);
+            console.log("LOCATION:", err.response?.headers?.location);
             throw err;
         }
     }
+
+    // const handleLogin = async (username, password) => {
+    //     try {
+    //         let request = await client.post("/login", {
+    //             username: username,
+    //             password: password
+    //         });
+
+    //         console.log(username, password)
+    //         console.log(request.data)
+
+    //         if (request.status === httpStatus.OK) {
+    //             localStorage.setItem("token", request.data.token);
+    //             router("/home")
+    //         }
+    //     } catch (err) {
+    //         throw err;
+    //     }
+    // }
 
     const handleLogin = async (username, password) => {
         try {
             let request = await client.post("/login", {
-                username: username,
-                password: password
+            username,
+            password,
             });
 
-            console.log(username, password)
-            console.log(request.data)
+            console.log(request.data);
 
             if (request.status === httpStatus.OK) {
-                localStorage.setItem("token", request.data.token);
-                router("/home")
+            localStorage.setItem("token", request.data.token);
+            router("/home");
             }
         } catch (err) {
+            console.log("Login error:", err.response?.data || err.message);
             throw err;
         }
-    }
+        };
 
     const getHistoryOfUser = async () => {
         try {
@@ -68,6 +92,9 @@ export const AuthProvider = ({ children }) => {
             return request.data
         } catch
          (err) {
+            console.log("STATUS:", err.response?.status);
+            console.log("ERROR DATA:", err.response?.data);
+            console.log("FULL ERROR:", err);
             throw err;
         }
     }

@@ -12,6 +12,7 @@ import {
   MoreVertical,
 } from "lucide-react";
 import "./hero.css";
+import { useNavigate } from 'react-router-dom'
 
 const people = [
   {
@@ -33,6 +34,8 @@ const people = [
 ];
 
 const Home = () => {
+
+  const router = useNavigate();
   return (
     <div>
         <Navbar/>
@@ -51,15 +54,15 @@ const Home = () => {
           and seamless for teams, businesses, and people everywhere.
         </p>
 
-        <div className="buttons">
+        <div className="buttons" onClick={() => router("/auth")}>
           <button className="primary-btn">
             <Video size={20} />
             Start a Meeting
           </button>
 
-          <button className="secondary-btn">
+          <button className="secondary-btn" onClick={() => router("/guest")}>
             <Video size={20} />
-            Join a Meeting
+          Join a Meeting
           </button>
         </div>
 

@@ -42,6 +42,7 @@ const register = async (req, res) => {
 
 
     try {
+        
         const existingUser = await User.findOne({ username });
         if (existingUser) {
             return res.status(httpStatus.FOUND).json({ message: "User already exists" });
@@ -56,11 +57,16 @@ const register = async (req, res) => {
         });
 
         await newUser.save();
+        
 
         res.status(httpStatus.CREATED).json({ message: "User Registered" })
+        console.log(req.body);
+        console.log("USERNAME:", username);
 
     } catch (e) {
         res.json({ message: `Something went wrong ${e}` })
+         console.log(req.body);
+        console.log("USERNAME:", username);
     }
 
 }

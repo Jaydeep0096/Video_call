@@ -8,7 +8,7 @@ import HomeComponent from './pages/home';
 import History from './pages/history';
 import axios from "axios";
 
-axios.defaults.baseURL = "https://video-call-poen.onrender.com";
+axios.defaults.baseURL = import.meta.env.NEXT_PUBLIC_BASE_URL;
 
 function App() {
   return (

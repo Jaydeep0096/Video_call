@@ -156,7 +156,6 @@
   font-size: 14px;
   font-weight: 600;
 }
-
 .controls {
   display: flex;
   justify-content: center;
@@ -166,12 +165,16 @@
 
 .controls button {
   width: 58px;
-  height: 46px;
-  border-radius: 25px;
+  height: 58px;
+  border-radius: 50%;
   border: none;
   background: #1f2937;
   color: white;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .controls .end-call {
